@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+<table  class="table table-striped" cellspacing="0" width="50% !important" >
+    <tr class="bg-info">
+      <td scope="col">Category Name</td>
+      <td><%= @category.cate_name %></td>
+	</tr>
+	<tr>
+  		<td scope="col">Action</td>
+  		<td><%= link_to 'Edit', edit_category_path(@category), class: 'btn btn-success btn-sm' %> |
+			<%= link_to 'Back', categories_path, class: 'btn btn-info btn-sm' %>
+  		</td>  
+	</tr>
+</table>
+

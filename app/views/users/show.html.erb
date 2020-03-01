@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+<table  class="table table-striped" cellspacing="0" width="50% !important" >
+    <tr class="bg-info">
+      <td scope="col">Email</td>
+        <td><%= @user.email %></td>
+    </tr>
+    <tr>
+  		<td scope="col">Action</td>
+      	<td><%= link_to "Logout", logout_path, method: :delete %><td>
+    </tr>
+</table>

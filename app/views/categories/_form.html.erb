@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <h1 class="title">New Category</h1>
+  </div>
+  <div class="row" >
+    <div class="col-lg-offset-4 col-lg-12">
+      <%= form_with(model: category, local: true) do |form| %>
+        <% if category.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(category.errors.count, "error") %> prohibited this category from being saved:</h2>
+            <ul>
+              <% category.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+        <div class="form-group">
+          <%= form.label :cate_name %>
+          <%= form.text_field :cate_name, class: 'form-control',style: 'width:300px' %>
+        </div>
+        <div class="actions">
+          <%= form.submit 'Create Category' , class: 'btn btn-info my-4',style: 'width:150px;' %>
+          <%= link_to 'Back', categories_path, class: 'btn btn-info my-4',style: 'width:150px;' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

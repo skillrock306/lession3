@@ -1,0 +1,32 @@
+<%= render 'admindivide/navigation' %>
+<div class="container">
+    <%= form_tag users_path, class: 'navbar-form navbar-center' ,:method => 'get' do %>
+        <%= text_field_tag :search, params[:search],placeholder: "Search..." ,class: 'form-control' %>
+        <%= submit_tag "Search", class: 'btn btn-default' %>
+    <% end %>
+    <h1><strong>List User</strong></h1>
+    <div class="table-responsive">
+        <table class="table" cellspacing="0" width="100%">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+              <% @users.each do |user| %>
+                <tr>
+                    <td><%= user.name %></td>
+                    <td><%= user.email %></td>
+                    <td class="td-actions text-right">
+                        <%= link_to 'Edit', edit_user_path(user), class: 'btn btn-success btn-round btn-just-icon btn-sm' %>
+                        <%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-round btn-just-icon btn-sm' %>
+                    </td>
+                </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </div>
+    <%= will_paginate @users, renderer: BootstrapPagination::Rails %>
+</div>

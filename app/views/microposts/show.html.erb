@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+<table  class="table table-striped" cellspacing="0" width="50% !important" >
+    <tr class="bg-info">
+      <td scope="col">Category</td>
+      <td><%= @micropost.categories_id %></td>
+    </tr>
+    <tr class="bg-info">
+      <td scope="col">Content</td>
+      <td><%= @micropost.content %></td>
+  	</tr>
+  	<tr>	
+      <td scope="col">User</td>
+      <td><%= @micropost.user_id %></td>
+	   </tr>
+	   <tr>
+  		<td scope="col">Action</td>
+  		<td><%= link_to 'Edit', edit_micropost_path(@micropost), class: 'btn btn-success btn-sm' %> |
+			<%= link_to 'Back', microposts_path, class: 'btn btn-info btn-sm' %>
+		</td>
+	</tr>
+</table>
+
+
