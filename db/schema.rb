@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2020_03_01_032844) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "category_id"
     t.integer "categories_id"
+    t.string "cate_name"
     t.index ["categories_id"], name: "index_microposts_on_categories_id"
   end
 

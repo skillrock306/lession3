@@ -1,5 +1,4 @@
 class SessionsController < ApplicationController
-	before_action :authentica_user, only: [:new]
   def new
   end
 
@@ -19,11 +18,6 @@ class SessionsController < ApplicationController
     flash[:success] = "You are logged out"
     redirect_to login_path
   end
-  def authentica_user
-    if logged_in?
-      flash[:alert] = "You have already sign in"
-      redirect_to root_path
-    end
-  end
+
 end
 

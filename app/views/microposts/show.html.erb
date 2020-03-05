@@ -2,7 +2,7 @@
 <table  class="table table-striped" cellspacing="0" width="50% !important" >
     <tr class="bg-info">
       <td scope="col">Category</td>
-      <td><%= @micropost.categories_id %></td>
+      <td><%= link_to Category.find(@micropost.categories_id).cate_name, category_path(@micropost.categories_id) %></td>
     </tr>
     <tr class="bg-info">
       <td scope="col">Content</td>
@@ -12,6 +12,10 @@
       <td scope="col">User</td>
       <td><%= @micropost.user_id %></td>
 	   </tr>
+     <tr>
+       <td scope="col">Avatar</td>
+       <td><%= image_tag @micropost.avatar.variant(resize_to_limit: [100, 100])%></td>
+     </tr>
 	   <tr>
   		<td scope="col">Action</td>
   		<td><%= link_to 'Edit', edit_micropost_path(@micropost), class: 'btn btn-success btn-sm' %> |

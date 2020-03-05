@@ -13,16 +13,20 @@
             <tr>
                 <th>Category</th>
                 <th>Content</th>
+                <th>Avatar</th>
                 <th>User</th>
+                <th>Create At</th>
                 <th><%= link_to 'New Micropost', new_micropost_path, class: 'btn btn-info btn-sm' %></th>
             </tr>
         </thead>
         <tbody>
           <% @microposts.each do |micropost| %>
             <tr>
-              <td><%= micropost.category_id %></td>
+              <td><%= Category.find(micropost.categories_id).cate_name %></td>
               <td><%= micropost.content %></td>
+              <td><%= image_tag micropost.avatar.variant(resize_to_limit: [100, 100])%></td>
               <td><%= micropost.user_id %></td>
+              <td>Posted <%= time_ago_in_words(micropost.created_at) %> ago.</td>
               <td><%= link_to 'Show', micropost, class: 'btn btn-primary btn-round btn-just-icon btn-sm' %>
               <%= link_to 'Edit', edit_micropost_path(micropost), class: 'btn btn-success btn-round btn-just-icon btn-sm' %>
               <%= link_to 'Destroy', micropost, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-round btn-just-icon btn-sm' %>

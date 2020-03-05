@@ -5,7 +5,7 @@ class MicropostsController < ApplicationController
   # GET /microposts
   # GET /microposts.json
   def index
-    @microposts = Micropost.search(params[:search]).paginate(page: params[:page],per_page: 5)
+    @microposts = Micropost.all.search(params[:search]).paginate(page: params[:page],per_page: 5)
   end
 
   # GET /microposts/1
@@ -70,7 +70,7 @@ class MicropostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def micropost_params
-      params.require(:micropost).permit(:content, :user_id)
+      params.require(:micropost).permit(:cate_name, :content, :avatar, :user_id, :categories_id)
     end
     def authentica_user
       unless logged_in?

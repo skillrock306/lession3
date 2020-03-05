@@ -20,8 +20,11 @@
             <%= form.text_area :content, class: 'form-control',style: 'width:300px' %>
           </div>
           <div class="form-group">
-            <%= form.label :category_id %>
-            <%= form.select :category_id, options_for_select(Category.pluck(:cate_name, :id)) %>
+            <%= form.file_field :avatar %>
+          </div>
+          <div class="form-group">
+            <%= form.label :categories_id %>
+            <%= form.select :categories_id, options_for_select(Category.pluck(:cate_name, :id)) %>
           </div>
           <div class="form-group">
             <%= form.label :user_id %>
