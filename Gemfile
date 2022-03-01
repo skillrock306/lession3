@@ -26,7 +26,7 @@ gem 'bootstrap-sass'
 gem "bcrypt", "~> 3.1.1"
 # Use Active Storage variant
 gem 'will_paginate-bootstrap'
-gem 'image_processing', '~> 1.2'
+gem 'image_processing', '~> 1.12'
 gem "ransack"
 gem "mini_magick"
 gem 'carrierwave'
